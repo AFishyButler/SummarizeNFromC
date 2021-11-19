@@ -22,6 +22,7 @@ The goal of SummarizeNFromC is to output a tibble containing the mean, range, an
 
 ## Installation
 
+devtools::install_github("AFishyButler/SummarizeNFromC")
 
 ## Example
 

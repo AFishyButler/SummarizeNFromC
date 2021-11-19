@@ -12,6 +12,8 @@ some category.
 
 ## Installation
 
+devtools::install\_github(“AFishyButler/SummarizeNFromC”)
+
 ## Example
 
 This is a basic example which shows the basic functionality of the
