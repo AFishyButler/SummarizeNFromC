@@ -13,12 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# SummarizeCFromN
+# **SummarizeCFromN**
+
+# Overview
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of SummarizeNFromC is to output a tibble containing the mean, range, and standard deviation of some numerical object as sorted into some category.
+The goal of SummarizeNFromC is to output a tibble containing the mean, range, and standard deviation of some numerical object as sorted into some category. This function and package is part of the STAT 545B assignments B1 and B2, respectively.
 
 ## Installation and how to run code
 
@@ -26,7 +28,7 @@ The goal of SummarizeNFromC is to output a tibble containing the mean, range, an
 
 This package is not released on CRAN. With this, you can use the devtools package to install straight from this repository.
 ```{r}
-suppressPackageStartupMessages(devtools::install_github("AFishyButler/SummarizeNFromC"))
+devtools::install_github("AFishyButler/SummarizeNFromC")
 ```
 
 ### Running the code
@@ -45,4 +47,4 @@ suppressPackageStartupMessages(library(SummarizeCFromN))
 (summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
 ```
 
-This function is compatible with any dataframe so long as one object is of character class and the other is numerical
+This function is compatible with any dataframe so long as one object is of character class and the other is numerical.

@@ -1,14 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SummarizeCFromN
+# **SummarizeCFromN**
+
+# Overview
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 The goal of SummarizeNFromC is to output a tibble containing the mean,
 range, and standard deviation of some numerical object as sorted into
-some category.
+some category. This function and package is part of the STAT 545B
+assignments B1 and B2, respectively.
 
 ## Installation and how to run code
 
@@ -18,8 +21,8 @@ This package is not released on CRAN. With this, you can use the
 devtools package to install straight from this repository.
 
 ``` r
-suppressPackageStartupMessages(devtools::install_github("AFishyButler/SummarizeNFromC"))
-#> Skipping install of 'SummarizeNFromC' from a github remote, the SHA1 (3cb2feda) has not changed since last install.
+devtools::install_github("AFishyButler/SummarizeNFromC")
+#> Skipping install of 'SummarizeNFromC' from a github remote, the SHA1 (61db887d) has not changed since last install.
 #>   Use `force = TRUE` to force installation
 ```
 
@@ -59,4 +62,4 @@ suppressPackageStartupMessages(library(SummarizeCFromN))
 ```
 
 This function is compatible with any dataframe so long as one object is
-of character class and the other is numerical
+of character class and the other is numerical.
