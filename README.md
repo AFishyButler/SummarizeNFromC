@@ -10,9 +10,23 @@ The goal of SummarizeNFromC is to output a tibble containing the mean,
 range, and standard deviation of some numerical object as sorted into
 some category.
 
-## Installation
+## Installation and how to run code
 
-devtools::install\_github(“AFishyButler/SummarizeNFromC”)
+### Installation
+
+This package is not released on CRAN. With this, you can use the
+devtools package to install straight from this repository.
+
+``` r
+suppressPackageStartupMessages(devtools::install_github("AFishyButler/SummarizeNFromC"))
+#> Skipping install of 'SummarizeNFromC' from a github remote, the SHA1 (3cb2feda) has not changed since last install.
+#>   Use `force = TRUE` to force installation
+```
+
+### Running the code
+
+Once installed, all code can be executed in RStudio from either a new or
+existing project.
 
 ## Example
 
@@ -21,18 +35,10 @@ package: a tibble output containing the mean, range, and standard
 deviation of the diameter of a tree dependent on cultivar.
 
 ``` r
-library(datateachr)
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-library(magrittr)
-library(SummarizeCFromN)
+suppressPackageStartupMessages(library(datateachr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(magrittr))
+suppressPackageStartupMessages(library(SummarizeCFromN))
 
 (summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
 #> # A tibble: 588 x 4
@@ -51,3 +57,6 @@ library(SummarizeCFromN)
 #> 10 ALMIRA        17.4   29   8.28 
 #> # ... with 578 more rows
 ```
+
+This function is compatible with any dataframe so long as one object is
+of character class and the other is numerical

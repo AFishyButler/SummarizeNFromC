@@ -24,7 +24,7 @@ summarize_N_from_C <- function(df, C, N){
   }
   df %>%
     group_by ({{ C }}) %>%
-    summarise( mean= mean({{ N }}),
-               range = range({{ N }}),
-               sd= sd({{ N }}))}
+    summarise( mean= mean({{ N }}, na.rm=TRUE),
+               range = range({{ N }}, na.rm=TRUE),
+               sd= sd({{ N }}, na.rm=TRUE))}
 

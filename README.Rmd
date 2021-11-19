@@ -20,19 +20,29 @@ knitr::opts_chunk$set(
 
 The goal of SummarizeNFromC is to output a tibble containing the mean, range, and standard deviation of some numerical object as sorted into some category.
 
-## Installation
+## Installation and how to run code
 
-devtools::install_github("AFishyButler/SummarizeNFromC")
+### Installation
+
+This package is not released on CRAN. With this, you can use the devtools package to install straight from this repository.
+```{r}
+suppressPackageStartupMessages(devtools::install_github("AFishyButler/SummarizeNFromC"))
+```
+
+### Running the code
+
+Once installed, all code can be executed in RStudio from either a new or existing project.
 
 ## Example
 
 This is a basic example which shows the basic functionality of the package: a tibble output containing the mean, range, and standard deviation of the diameter of a tree dependent on cultivar.
 ```{r example}
-library(datateachr)
-library(dplyr)
-library(magrittr)
-library(SummarizeCFromN)
+suppressPackageStartupMessages(library(datateachr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(magrittr))
+suppressPackageStartupMessages(library(SummarizeCFromN))
 
 (summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
 ```
 
+This function is compatible with any dataframe so long as one object is of character class and the other is numerical
