@@ -35,9 +35,6 @@ functions in the package to be exported.
 nature of the package, its contents, the aims of the project, and
 example usage.
 
-*SummarizeNFromC.Rproj:* Contains the project options and can be used as
-a shortcut for opening the project directly from the file system.
-
 # Overview
 
 <!-- badges: start -->
