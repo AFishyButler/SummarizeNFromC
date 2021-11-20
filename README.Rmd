@@ -58,7 +58,8 @@ The goal of SummarizeNFromC is to output a tibble containing the mean, range, an
 ### Installation
 
 This package is not released on CRAN. With this, you can use the devtools package to install straight from this repository.
-```{r}
+
+```
 devtools::install_github("AFishyButler/SummarizeNFromC")
 ```
 
@@ -70,12 +71,10 @@ Once installed, all code can be executed in RStudio from either a new or existin
 
 This is a basic example which shows the basic functionality of the package: a tibble output containing the mean, range, and standard deviation of the diameter of a tree dependent on cultivar.
 ```{r example}
-suppressPackageStartupMessages(library(datateachr))
 suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(magrittr))
 suppressPackageStartupMessages(library(SummarizeCFromN))
 
-(summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
+(summarize_N_from_C (datateachr::vancouver_trees, cultivar_name , diameter ))
 ```
 
 This function is compatible with any dataframe so long as one object is of character class and the other is numerical.

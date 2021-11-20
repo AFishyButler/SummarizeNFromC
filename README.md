@@ -55,11 +55,7 @@ assignments B1 and B2, respectively.
 This package is not released on CRAN. With this, you can use the
 devtools package to install straight from this repository.
 
-``` r
-devtools::install_github("AFishyButler/SummarizeNFromC")
-#> Skipping install of 'SummarizeNFromC' from a github remote, the SHA1 (0a1c5bb9) has not changed since last install.
-#>   Use `force = TRUE` to force installation
-```
+    devtools::install_github("AFishyButler/SummarizeNFromC")
 
 ### Running the code
 
@@ -73,12 +69,10 @@ package: a tibble output containing the mean, range, and standard
 deviation of the diameter of a tree dependent on cultivar.
 
 ``` r
-suppressPackageStartupMessages(library(datateachr))
 suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(magrittr))
 suppressPackageStartupMessages(library(SummarizeCFromN))
 
-(summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
+(summarize_N_from_C (datateachr::vancouver_trees, cultivar_name , diameter ))
 #> # A tibble: 588 x 4
 #> # Groups:   cultivar_name [294]
 #>    cultivar_name  mean range    sd

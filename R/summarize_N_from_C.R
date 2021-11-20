@@ -6,16 +6,19 @@
 #' @param C Is a character object; named this way as it must be a character
 #' @param df Denotes the dataframe used
 #' @return A tibble with basic statistic summaries
+#' @importFrom magrittr %>%
+#' @importFrom dplyr summarise group_by
+#' @importFrom stats sd
 #' @examples
-#' (summarize_N_from_C (vancouver_trees, cultivar_name , diameter ))
-#' (summarize_N_from_C("dataframe","a categorical object", "a numerical object" ))
+#' summarize_N_from_C (datateachr::vancouver_trees, cultivar_name , diameter )
+#' summarize_N_from_C(datateachr::apt_buildings,balconies, no_barrier_free_accessible_units )
 #' @export
 summarize_N_from_C <- function(df, C, N){
-  summary <- dplyr::summarise(df,
-                              is_numeric_N= is.numeric({{ N }}),
-                              class_N= class({{ N }}),
-                              is_character_C= is.character({{ C }}),
-                              class_C= class({{ C }}))
+  summary <- summarise(df,
+                       is_numeric_N= is.numeric({{ N }}),
+                       class_N= class({{ N }}),
+                       is_character_C= is.character({{ C }}),
+                       class_C= class({{ C }}))
   if(!summary$is_numeric_N ){
     stop(" Sorry, 'N' must be numeric, but is currently ", summary$class_N)
   }
@@ -27,4 +30,3 @@ summarize_N_from_C <- function(df, C, N){
     summarise( mean= mean({{ N }}, na.rm=TRUE),
                range = range({{ N }}, na.rm=TRUE),
                sd= sd({{ N }}, na.rm=TRUE))}
-
